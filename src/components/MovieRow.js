@@ -1,7 +1,12 @@
 import React from 'react';
 import './MovieRow.css';
+import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore'; 
+import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 
 export default ({title, items}) => {
+  const [scrollX, setScrollX] = useState(0);
+  
+  
   return(
     <div className="movieRow">
         <h2>{title}</h2>
@@ -19,3 +24,4 @@ export default ({title, items}) => {
   );
 
 }
+

@@ -3,11 +3,13 @@ import './App.css';
 import Tmdb from './Tmdb';
 import MovieRow from './components/MovieRow';
 import FeaturedMovie from './components/FeaturedMovie';
+import Header from './components/Header';
 
 export default () => {
   
   const [movieList, setMovieList] = useState([]);
   const [featuredData, setFeaturedData] = useState(null);
+  const [blackHeader, setBlackHeader] = useState(false);
 
   useEffect(()=> {
     const loadAll = async () => {
@@ -23,6 +25,14 @@ export default () => {
 
     loadAll();
   },[]);
+  
+  useEffect(() => {
+    const scrollListner =() => {
+      if(window.scrollY > 10) {
+        set
+      } 
+    }
+  }, []); 
   
   
   return (
@@ -42,3 +52,10 @@ export default () => {
     </div>
   );
 }
+
+<footer>
+          Desenvolvido por Matheus Salvi<br/> 
+          GitHub: https://github.com/dokhosalvi<br/>
+          Direito de imagem para Netflix<br/>
+          Dados dos filmes retirados do TMDB: https://www.themoviedb.org/
+</footer>

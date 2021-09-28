@@ -52,19 +52,22 @@ export default {
       },
 
     ];
-  }
+  },
   getMovieInfo: async(movieId, type) => {
     let info = {};
 
     if (movieId) {
-      case 'movie':
-        info = await basicFetch('/movie/${movieId}?language=pt-BR&api_key={API_KEY}');   
+      switch(type) {
+        case 'movie':
+          info = await basicFetch('/movie/${movieId}?language=pt-BR&api_key={API_KEY}');   
       break;
       case 'tv':
-      info = await basicFetch('/tv/${movieId}?language=pt-BR&api_key={API_KEY}');
+        info = await basicFetch('/tv/${movieId}?language=pt-BR&api_key={API_KEY}');
       break;
       info = null;
       break; 
+      }
+      
     }
     return info;
   } 
